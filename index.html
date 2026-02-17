@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Voice Journal</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="app-header">
+        <h1>Voice Journal</h1>
+        <p>Capture thoughts quickly, review them anytime.</p>
+      </header>
+
+      <section id="home-screen" class="screen active" aria-label="Home screen">
+        <section class="card recorder" aria-live="polite">
+          <h2>New Entry</h2>
+          <p id="recording-status" class="status">Tap start and speak naturally.</p>
+          <div class="record-controls">
+            <button id="record-toggle" class="record-button" type="button">Start Recording</button>
+            <span id="record-time" class="timer">00:00</span>
+          </div>
+
+          <label for="transcript" class="label">Transcription</label>
+          <textarea id="transcript" rows="5" placeholder="Your transcription appears here. You can edit it before saving."></textarea>
+
+          <button id="save-entry" class="save-button" type="button" disabled>Save Entry</button>
+        </section>
+      </section>
+
+      <section id="entries-screen" class="screen" aria-label="Entries screen">
+        <section class="card entries">
+          <div class="entries-heading">
+            <h2>Past Entries</h2>
+            <button id="clear-all" class="clear-button" type="button">Clear</button>
+          </div>
+
+          <label for="date-filter" class="label">Browse by date</label>
+          <input id="date-filter" class="date-filter" type="date" />
+
+          <div id="entries-list" class="entries-list">
+            <p class="empty-state">No entries yet.</p>
+          </div>
+        </section>
+      </section>
+
+      <nav class="bottom-nav" aria-label="Primary navigation">
+        <button id="nav-home" class="nav-button active" type="button">Home</button>
+        <button id="nav-entries" class="nav-button" type="button">Entries</button>
+      </nav>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
